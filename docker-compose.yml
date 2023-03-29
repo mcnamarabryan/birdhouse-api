@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  birdhouse:
+    container_name: birdhouse
+    build: .
+    restart: unless-stopped
+    environment:
+      - DB_HOST=mysql
+      - DB_NAME=birdhouse
+      - DB_USER=birdhouse
+      - DB_PASSWORD=L;96gh[]
+      - DB_PORT=3306
+      - JWT_SECRET=mysecret
+      - PORT=3000
+      - TEST_PORT=6000
+    ports:
+      - "3000:3000"
+
+  mysql:
+    container_name: mysql
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: birdhouse
+      MYSQL_USER: birdhouse
+      MYSQL_PASSWORD: "L;96gh[]"
+      MYSQL_ROOT_PASSWORD: "L;96gh[]"
+    volumes:
+      - db-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+volumes:
+  db-data:
