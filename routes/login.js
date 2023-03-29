@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require('../utils/db');
 const bodyParser = require('body-parser');
 
-router.post('/', bodyParser.json(), async (req, res) => {
+router.post('/api/login', bodyParser.json(), async (req, res) => {
   const { username, password } = req.body;
   if (!username || !password) {
     return res.status(400).json({ error: 'Username and password are required' });
