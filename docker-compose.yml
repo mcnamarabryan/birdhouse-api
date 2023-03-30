@@ -9,7 +9,7 @@ services:
       - DB_HOST=mysql
       - DB_NAME=birdhouse
       - DB_USER=birdhouse
-      - DB_PASSWORD=L;96gh[]
+      - DB_PASSWORD=password
       - DB_PORT=3306
       - JWT_SECRET=mysecret
       - PORT=3000
@@ -24,8 +24,8 @@ services:
     environment:
       MYSQL_DATABASE: birdhouse
       MYSQL_USER: birdhouse
-      MYSQL_PASSWORD: "L;96gh[]"
-      MYSQL_ROOT_PASSWORD: "L;96gh[]"
+      MYSQL_PASSWORD: "password"
+      MYSQL_ROOT_PASSWORD: "password"
     volumes:
       - db-data:/var/lib/mysql
     ports:
