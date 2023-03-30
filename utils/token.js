@@ -5,7 +5,7 @@ const checkToken = (req, res, next) => {
   // Get the token from the request headers
   const token = req.headers.authorization?.split(' ')[1];
   if (!token) {
-    return res.status(401).json({ error: 'No token provided' });
+    return (res || {}).status(401).json({ error: 'No token provided' });
   }
   try {
     // Verify the token
@@ -14,7 +14,7 @@ const checkToken = (req, res, next) => {
     req.user = decoded;
     next();
   } catch (err) {
-    return res.status(401).json({ error: 'Invalid token' });
+    return (res || {}).status(401).json({ error: 'Invalid token' });
   }
 };
 

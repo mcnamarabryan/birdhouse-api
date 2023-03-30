@@ -13,7 +13,7 @@ services:
       - DB_PORT=3306
       - JWT_SECRET=mysecret
       - PORT=3000
-      - TEST_PORT=6000
+      - TEST_PORT=3001
     ports:
       - "3000:3000"
 
