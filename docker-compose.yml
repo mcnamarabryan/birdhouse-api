@@ -5,15 +5,8 @@ services:
     container_name: birdhouse-api
     build: .
     restart: unless-stopped
-    environment:
-      - DB_HOST=mysql
-      - DB_NAME=birdhouse
-      - DB_USER=birdhouse
-      - DB_PASSWORD=password
-      - DB_PORT=3306
-      - JWT_SECRET=mysecret
-      - PORT=3000
-      - TEST_PORT=3001
+    env_file:
+      ./env.docker.birdhouse-api
     ports:
       - "3000:3000"
 
@@ -21,11 +14,8 @@ services:
     container_name: mysql
     image: mysql:8.0
     restart: unless-stopped
-    environment:
-      MYSQL_DATABASE: birdhouse
-      MYSQL_USER: birdhouse
-      MYSQL_PASSWORD: "password"
-      MYSQL_ROOT_PASSWORD: "password"
+    env_file:
+      ./env.docker.mysql
     volumes:
       - db-data:/var/lib/mysql
     ports:
