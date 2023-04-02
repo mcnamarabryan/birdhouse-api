@@ -1,62 +1,55 @@
 # Birdhouse API
 
-This project is an API server built with the Express framework. It provides two main API endpoints: one for uploading images to the `images` table in the database, and another for posting messages to the `logs` table.
+An API server built with Express.js for uploading images and posting messages to a log table. The project uses MySQL as the database and provides API endpoints to interact with the data.
 
-## Features
+This project was built with the help of ChatGPT-4, an AI language model by OpenAI.
 
-- Upload images to the `images` table in the database
-- Post messages to the `logs` table in the database
+## Getting Started
 
-## Installation
+These instructions will help you get the project up and running on your local machine for development and testing purposes.
 
-1. Clone this repository:
+### Prerequisites
 
-```sh
+- Node.js (version 14 or higher)
+- MySQL server
+
+### Installing
+
+Clone the repository to your local machine:
+
+```
 git clone https://github.com/mcnamarabryan/birdhouse-api.git
 ```
-2. Install the required dependencies:
+Change to the project directory:
 ```
 cd birdhouse-api
-npm install
 ```
-3. Set up the environment variables for the database configuration:
- - Modify env.docker.birdhouse-api in the root directory of the project with the following content:
+Modify the env.docker.birdhouse-api and env.docker.mysql files in the root directory of the project with the appropriate content to configure the database connection and environment variables for your Docker setup.
+Run Docker build:
 ```
-DB_HOST=your_db_host
-DB_USER=your_db_user
-DB_PASSWORD=your_db_password
-DB_NAME=your_db_name
+docker-compose build
+docker-compose up -d
 ```
- - Update the env.docker.mysql file in the root directory of the project with the corresponding values for 
- ```
- MYSQL_ROOT_PASSWORD=your_root_db_password
- MYSQL_DATABASE=your_db_name
- MYSQL_USER=your_db_user
- MYSQL_PASSWORD=your_db_password
- ```
-Replace your_db_host, your_db_user, your_db_password, and your_db_name with your actual database credentials.
+In database/migrations, run the SQL provided.
 
-4. Run the server:
-```
-npm start
-```
-The server should be running at http://localhost:3000.
+The application will be accessible at http://localhost:3000.
 
 ### API Endpoints
 
-- Upload an image:
- - Endpoint: POST /upload-image
- - Parameters: user_id (integer), image (multipart file)
-- Post a message:
- - Endpoint: POST /post-message
- - Parameters: user_id (integer), message (string)
+The API server provides the following endpoints:
 
-### Acknowledgements
+  POST /api/images: Upload an image file to the server.
+  POST /api/messages: Post a message to the log table.
 
-This project was developed with the assistance of OpenAI's ChatGPT-4, which helped in writing the code and providing guidance.
+### Built With
 
-### Contributors
+  Express - Fast, unopinionated, minimalist web framework for Node.js
+  MySQL - Open-source relational database management system
 
-Bryan McNamara (mcnamarabryan)
+### Contributing
 
-ChatGPT-4 by OpenAI
+This project was developed with the help of ChatGPT-4 by OpenAI. Contributions to this project are welcome. Please feel free to submit issues and pull requests.
+
+License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
