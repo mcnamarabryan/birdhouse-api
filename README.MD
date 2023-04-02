@@ -52,4 +52,5 @@ This project was developed with the assistance of OpenAI's ChatGPT-4, which help
 Contributors
 
 Bryan McNamara (mcnamarabryan)
+
 ChatGPT-4 by OpenAI
