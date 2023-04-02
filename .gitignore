@@ -1,2 +1,4 @@
 .DS_Store
 env.birdhouse-api
+env.docker.birdhouse-api
+env.docker.mysql
