@@ -3,6 +3,10 @@ const dbConfig = require('../config/db');
 
 const pool = mysql.createPool(dbConfig);
 
+exports.getMessage = async (req, res) => {
+  res.render('index');
+}
+
 exports.postMessage = async (req, res) => {
   const { user_id, message } = req.body;
 

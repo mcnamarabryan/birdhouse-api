@@ -7,7 +7,11 @@ const upload = multer({ storage: storage });
 
 const pool = mysql.createPool(dbConfig);
 
-exports.uploadImage = async (req, res) => {
+exports.getImage = async (req, res) => {
+  res.render('index')
+}
+
+exports.postImage = async (req, res) => {
   try {
     const { user_id } = req.body;
     const file = req.file;
