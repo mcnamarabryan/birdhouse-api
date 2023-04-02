@@ -19,4 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
 module.exports = app;
