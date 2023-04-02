@@ -1,11 +1,11 @@
 const multer = require('multer');
 const mysql = require('mysql2/promise');
-const config = require('../config/db');
+const dbConfig = require('../config/db');
 
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-const pool = mysql.createPool(config.db);
+const pool = mysql.createPool(dbConfig);
 
 exports.uploadImage = async (req, res) => {
   try {
