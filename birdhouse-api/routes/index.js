@@ -1,9 +1,9 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const imageController = require('../controllers/imageController');
+const messageController = require('../controllers/messageController');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.post('/upload-image', imageController.multerUpload, imageController.uploadImage);
+router.post('/post-message', messageController.postMessage);
 
 module.exports = router;
