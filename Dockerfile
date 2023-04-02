@@ -6,6 +6,7 @@ WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json
 COPY ./birdhouse-api/package*.json ./
+COPY ./birdhouse-api/env.stub ./.env
 
 # Install dependencies
 RUN npm install

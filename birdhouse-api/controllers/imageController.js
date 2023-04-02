@@ -1,6 +1,6 @@
 const multer = require('multer');
 const mysql = require('mysql2/promise');
-const config = require('../config/config');
+const config = require('../config/db');
 
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
