@@ -49,7 +49,7 @@ The server should be running at http://localhost:3000.
 
 This project was developed with the assistance of OpenAI's ChatGPT-4, which helped in writing the code and providing guidance.
 
-Contributors
+### Contributors
 
 Bryan McNamara (mcnamarabryan)
 
