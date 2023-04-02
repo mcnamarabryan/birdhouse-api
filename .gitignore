@@ -2,3 +2,4 @@
 env.birdhouse-api
 env.docker.birdhouse-api
 env.docker.mysql
+birdhouse-api/node_modules/
