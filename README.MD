@@ -39,11 +39,13 @@ The application will be accessible at http://localhost:3000.
 The API server provides the following endpoints:
 
   POST /api/images: Upload an image file to the server.
+
   POST /api/messages: Post a message to the log table.
 
 ### Built With
 
   Express - Fast, unopinionated, minimalist web framework for Node.js
+  
   MySQL - Open-source relational database management system
 
 ### Contributing
