@@ -1,9 +1,7 @@
-const mysql = require('mysql2/promise');
-const dbConfig = require('../config/database');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-const pool = mysql.createPool(dbConfig);
+const pool = require('../config/database');
 const User = require('../models/User');
 
 exports.getLogin = async (req, res) => {

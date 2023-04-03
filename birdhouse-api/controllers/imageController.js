@@ -1,11 +1,8 @@
 const multer = require('multer');
-const mysql = require('mysql2/promise');
-const dbConfig = require('../config/database');
-
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-const pool = mysql.createPool(dbConfig);
+const pool = require('../config/database');
 
 exports.getImage = async (req, res) => {
   res.render('index')
