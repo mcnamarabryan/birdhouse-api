@@ -36,15 +36,29 @@ const createUser = async (username, password) => {
     }
 };
 
-// Create some test users
-const createTestUsers = async () => {
-    await createUser('birdhouse', 'kasdeJ@#*U#&Dbsajkdsdna3');
+const createTestUsers = async (username, password) => {
+    await createUser(username, password);
 };
 
-createTestUsers().then(() => {
-    console.log('Test users created');
+
+const main = async () => {
+    const args = process.argv.slice(2);
+    if (args.length !== 2) {
+        console.error('Usage: node createUser.js <username> <password>');
+        process.exit(1);
+    }
+    
+    const [username, password] = args;
+    
+    try {
+        await createTestUsers(username, password);
+        console.log('User created');
+    } catch (err) {
+        console.error(err);
+    }
+    
     pool.end();
-}).catch((err) => {
-    console.error(err);
-    pool.end();
-});
+};
+
+main();
+
