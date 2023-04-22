@@ -8,7 +8,7 @@ router.get('/', loginController.getLogin);
 
 router.post('/auth', loginController.authLogin);
 
-router.get('/me', authenticate, async (req, res) => {
+router.get('/me', auth, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select('-password');
     res.status(200).json(user);
