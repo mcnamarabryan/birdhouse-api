@@ -4,17 +4,19 @@ const upload = multer({ storage: storage });
 
 const pool = require('../config/database');
 
+//hardcode user_id for now
+const user_id = 1;
+
 exports.getImage = async (req, res) => {
   res.render('index')
 }
 
 exports.postImage = async (req, res) => {
   try {
-    const { user_id } = req.body;
     const file = req.file;
 
-    if (!user_id || !file) {
-      return res.status(400).json({ message: 'Both user_id and image are required.' });
+    if (!file) {
+      return res.status(400).json({ message: 'Image is required.' });
     }
 
     const filename = file.originalname;
