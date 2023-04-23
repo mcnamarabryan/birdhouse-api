@@ -30,28 +30,17 @@ Change to the project directory:
 
 ``cd birdhouse-api``
 
-Install dependencies:
-
-``npm install``
-
-Create a .env file in the root directory of the project with the following variables:
-```
-JWT_SECRET=your_jwt_secret_here
-PORT=3000
-DB_HOST=your_database_host_here
-DB_PORT=your_database_port_here
-DB_USERNAME=your_database_username_here
-DB_PASSWORD=your_database_password_here
-DB_NAME=your_database_name_here
-```
-
-Replace the variables with your own values.
+Modify the env.docker.birdhouse-api and env.docker.mysql files in the root directory of the project with preferred values.
 
 Build and run the application with Docker Compose:
 
 ``docker-compose build && docker-compose up -d --force-recreate``
 
 The Birdhouse API should now be running on http://localhost:3000.
+
+The birdhouse-api/database directory has a migration that will fill out the database, and a seeder that will create a user:
+
+``node createUser <username> <password>``
 
 ## API Endpoints
 
