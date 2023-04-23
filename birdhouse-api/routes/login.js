@@ -5,9 +5,7 @@ const auth = require('../middleware/auth');
 const User = require('../models/User');
 
 router.get('/', loginController.getLogin);
-
 router.post('/auth', loginController.authLogin);
-
 router.get('/me', auth, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select('-password');
