@@ -10,7 +10,7 @@ exports.getLogin = async (req, res) => {
 
 exports.authLogin = async (req, res) => {
   const { username, password } = req.body;
-
+  console.log('login attempt for: ' + username);
   try {
     const user = await User.findOne({ username });
 
