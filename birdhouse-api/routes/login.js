@@ -4,9 +4,6 @@ const loginController = require('../controllers/loginController');
 const auth = require('../middleware/auth');
 const User = require('../models/User');
 
-console.log('loginController.getLogin', loginController.getLogin);
-console.log('loginController.authLogin', loginController.authLogin);
-
 router.get('/', loginController.getLogin);
 router.post('/auth', loginController.authLogin);
 router.get('/me', auth, async (req, res) => {
