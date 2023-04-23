@@ -1,57 +1,74 @@
 # Birdhouse API
 
-An API server built with Express.js for uploading images and posting messages to a log table. The project uses MySQL as the database and provides API endpoints to interact with the data.
+This repository contains the source code for the Birdhouse API, a RESTful API designed to work with the Birdhouse ESP32-CAM project. The API is built using Node.js, Express, and Sequelize ORM. It provides endpoints for user authentication and image uploads from the ESP32-CAM.
 
-This project was built with the help of ChatGPT-4, an AI language model by OpenAI.
+## Features
 
-## Getting Started
+- User authentication using JWT
+- Image upload from the ESP32-CAM
+- Image storage on the server's file system
+- Pagination support for image retrieval
 
-These instructions will help you get the project up and running on your local machine for development and testing purposes.
+## Prerequisites
 
-### Prerequisites
+- Node.js (v14 or higher)
 
-- Node.js (version 14 or higher)
-- MySQL server
+## Libraries Used
 
-### Installing
+- Express: Fast, unopinionated, minimalist web framework for Node.js
+- Sequelize: A promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite, and Microsoft SQL Server
+- jsonwebtoken: JSON Web Token implementation for Node.js
+- Multer: Middleware for handling multipart/form-data (file uploads)
 
-Clone the repository to your local machine:
+## Installation
 
-```
-git clone https://github.com/mcnamarabryan/birdhouse-api.git
-```
+Clone the repository:
+
+``git clone https://github.com/mcnamarabryan/birdhouse-api.git``
+
 Change to the project directory:
+
+``cd birdhouse-api``
+
+Install dependencies:
+
+``npm install``
+
+Create a .env file in the root directory of the project with the following variables:
 ```
-cd birdhouse-api
+JWT_SECRET=your_jwt_secret_here
+PORT=3000
+DB_HOST=your_database_host_here
+DB_PORT=your_database_port_here
+DB_USERNAME=your_database_username_here
+DB_PASSWORD=your_database_password_here
+DB_NAME=your_database_name_here
 ```
-Modify the env.docker.birdhouse-api and env.docker.mysql files in the root directory of the project with the appropriate content to configure the database connection and environment variables for your Docker setup.
-Run Docker build:
-```
-docker-compose build
-docker-compose up -d
-```
-In database/migrations, run the SQL provided.
 
-The application will be accessible at http://localhost:3000.
+Replace the variables with your own values.
 
-### API Endpoints
+Build and run the application with Docker Compose:
 
-The API server provides the following endpoints:
+``docker-compose build && docker-compose up -d --force-recreate``
 
-  POST /api/images: Upload an image file to the server.
+The Birdhouse API should now be running on http://localhost:3000.
 
-  POST /api/messages: Post a message to the log table.
+## API Endpoints
 
-### Built With
+### User Routes
+POST /login/auth: Log in with an existing user
+Image Routes
+POST /api/images: Upload an image (requires authentication)
+GET /api/images: Retrieve images with pagination (requires authentication)
+GET /api/images/:id: Retrieve a specific image by its ID (requires authentication)
+DELETE /api/images/:id: Delete a specific image by its ID (requires authentication)
 
-  Express - Fast, unopinionated, minimalist web framework for Node.js
-  
-  MySQL - Open-source relational database management system
+## License
 
-### Contributing
+This project is licensed under the MIT License.
 
-This project was developed with the help of ChatGPT-4 by OpenAI. Contributions to this project are welcome. Please feel free to submit issues and pull requests.
+## Authors
 
-License
+Bryan McNamara
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+ChatGPT
