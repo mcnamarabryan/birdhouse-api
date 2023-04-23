@@ -25,7 +25,7 @@ const char* server = "cloud-birdhouse.bkm-tech.com";
 const char* loginEndpoint = "/login/auth";
 const char* postEndpoint = "/image/post";
 const char* apiUsername = "birdmodeos";
-const char* apiPassword = "2qwidsDSJ__sdd+33=wasd.wESD__-w+wsfsaJIKMVKNNKJD39002948";
+const char* apiPassword = "password";
 
 // Maximum SD card storage size in bytes (512 MB)
 const uint32_t maxStorageSize = 512 * 1024 * 1024;
