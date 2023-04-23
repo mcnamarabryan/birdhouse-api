@@ -11,7 +11,7 @@ This repository contains the source code for the Birdhouse API, a RESTful API de
 
 ## Prerequisites
 
-- Node.js (v14 or higher)
+- Docker
 
 ## Libraries Used
 
