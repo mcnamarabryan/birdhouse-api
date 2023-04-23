@@ -45,12 +45,16 @@ The birdhouse-api/database directory has a migration that will fill out the data
 ## API Endpoints
 
 ### User Routes
+```
 POST /login/auth: Log in with an existing user
-Image Routes
+```
+### Image Routes
+```
 POST /api/images: Upload an image (requires authentication)
 GET /api/images: Retrieve images with pagination (requires authentication)
 GET /api/images/:id: Retrieve a specific image by its ID (requires authentication)
 DELETE /api/images/:id: Delete a specific image by its ID (requires authentication)
+```
 
 ## License
 
